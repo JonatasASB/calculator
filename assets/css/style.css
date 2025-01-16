@@ -36,10 +36,19 @@ button {
     height: 60px;
     border-radius: 50%;
     color: #fff;
+    font-size: 30px;
 }
 .area-text {
     grid-column: 1 / span 4;
-    grid-row-start: 1;
-    grid-row-end: 10;
-    line-height: 70px;
+    line-height: 100px;
+}
+#resultado-operacao {
+   background-color: #8e9292;
+}
+button[type='reset'] {
+    background-color: #f78a31;
+}
+
+button:active {
+    background-color: #f78a31;
 }
