@@ -6,10 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/output.css">
     <title>Document</title>
+    <style>
+        output::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        output::-webkit-scrollbar-thumb {
+            background-color: oklch(0.588 0.158 241.966);
+            border-radius: 3px;
+        }
+
+        output::-webkit-scrollbar-track {
+            background: transparent;
+        }
+    </style>
 </head>
 
-<body>
+<body class="h-screen w-screen flex justify-center items-center bg-slate-200">
+    <main class="bg-slate-200 w-xs rounded shadow-2xl h-auto mx-auto p-2 flex flex-col justify-center">
+        <form action="">
+            <output id="output"
+                class="shadow-md block h-[100px] w-[300px] bg-slate-400 my-3 rounded text-2xl p-2 text-right break-words text-ellipsis overflow-y-auto ">
+                <div id="calculation">10 + 10</div>
+                <div id="result">20</div>
+            </output>
+        </form>
+        <div class=" grid grid-cols-4 gap-2">
+            <button class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer"></button>
+            <button class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer"></button>
+            <button id="clear"
+                class="w-15 h-15 text-[14px] font-bold rounded-full bg-red-400 cursor-pointer">AC</button>
+            <button id="check-result"
+                class="w-15 h-15 text-2xl font-bold rounded-full bg-sky-600 cursor-pointer">=</button>
 
+            <button id="7" class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer">7</button>
+            <button id="8" class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer">8</button>
+            <button id="9" class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer">9</button>
+            <button id="subtraction"
+                class="w-15 h-15 text-2xl font-bold rounded-full bg-sky-600 cursor-pointer">-</button>
+
+            <button id="4" class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer">4</button>
+            <button id="5" class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer">5</button>
+            <button id="6" class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer">6</button>
+            <button id="sum" class="w-15 h-15 text-2xl font-bold rounded-full bg-sky-600 cursor-pointer">+</button>
+
+            <button id="1" class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer">1</button>
+            <button id="2" class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer">2</button>
+            <button id="3" class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer">3</button>
+            <button id="division" class="w-15 h-15 text-2xl font-bold rounded-full bg-sky-600 cursor-pointer">/</button>
+
+            <button class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer hidden"></button>
+            <button id="0"
+                class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer col-start-2 col-end-3">0</button>
+            <button class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer hidden"></button>
+            <button id="multiplication"
+                class=" w-15 h-15 text-2xl font-bold rounded-full bg-sky-600 cursor-pointer col-start-4 col-end-5">*</button>
+        </div>
+    </main>
+
+    <script src="src/main.js"></script>
 </body>
 
 </html>
