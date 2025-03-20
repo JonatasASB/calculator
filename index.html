@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/output.css">
-    <title>Document</title>
+    <title>Calculator</title>
     <style>
         output::-webkit-scrollbar {
             width: 3px;
@@ -32,10 +32,10 @@
             </output>
         </form>
         <div class=" grid grid-cols-4 gap-2">
-            <button class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer"></button>
-            <button class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer"></button>
+            <button class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer hidden"></button>
+            <button class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer hidden"></button>
             <button id="clear"
-                class="w-15 h-15 text-[14px] font-bold rounded-full bg-red-400 cursor-pointer">AC</button>
+                class="w-15 h-15 text-[14px] font-bold rounded-full bg-red-400 cursor-pointer col-start-3 col-start-end-4">AC</button>
             <button id="check-result"
                 class="w-15 h-15 text-2xl font-bold rounded-full bg-sky-600 cursor-pointer">=</button>
 
@@ -58,7 +58,7 @@
             <button class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer hidden"></button>
             <button id="0"
                 class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer col-start-2 col-end-3">0</button>
-            <button class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer hidden"></button>
+            <button id="." class="w-15 h-15 text-2xl font-bold rounded-full bg-slate-300 cursor-pointer">.</button>
             <button id="multiplication"
                 class=" w-15 h-15 text-2xl font-bold rounded-full bg-sky-600 cursor-pointer col-start-4 col-end-5">*</button>
         </div>
