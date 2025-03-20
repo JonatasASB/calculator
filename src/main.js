@@ -24,16 +24,41 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const value = button.textContent;
 
+
             if (value === "=") {
                 calcResult();
             } else if (value === "AC") {
+                calculation.textContent = '';
                 equation = '';
-                result.textContent = '0';
+                result.textContent = ''
                 updateDisplay();
             } else {
                 equation += value;
                 updateDisplay();
             }
         })
+    })
+    document.addEventListener('keyup', (e) => {
+        let key = e.key;
+
+        if (key === "Backspace") {
+            equation = equation.slice(0, -1);
+            updateDisplay();
+        }
+
+        if (!isNaN(key) || "+-*./".includes(key)) {
+            equation += key;
+            updateDisplay();
+        }
+        else if (key === "Enter") {
+            calcResult();
+        }
+        else if (key === "Escape") {
+            calculation.textContent = '';
+            equation = ''
+            result.textContent = '';
+
+            updateDisplay();
+        }
     })
 })
