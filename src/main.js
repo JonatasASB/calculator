@@ -14,16 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function calcResult() {
         try {
-            result.textContent = new Function(`return ${equation}`)() || '0'
+            result.textContent = new Function(`return ${equation}`)() || 0
         } catch (error) {
             result.textContent = 'Error'
         }
     }
-
+    function addChar(char) {
+        let lastChar = equation[equation.length - 1];
+        if (isOperator(lastChar) && isOperator(char)) {
+            return true
+        }
+    }
+    function isOperator(char) {
+        return ['+', '-', '*', '/', '.'].includes(char);
+    }
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
             const value = button.textContent;
-
 
             if (value === "=") {
                 calcResult();
@@ -33,8 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 result.textContent = ''
                 updateDisplay();
             } else {
-                equation += value;
-                updateDisplay();
+                if (!addChar(value)) {
+                    equation += value;
+                    updateDisplay();
+                } else {
+                    return;
+                }
             }
         })
     })
@@ -45,10 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
             equation = equation.slice(0, -1);
             updateDisplay();
         }
-
         if (!isNaN(key) || "+-*./".includes(key)) {
-            equation += key;
-            updateDisplay();
+            if (!addChar(key)) {
+                equation += key;
+                updateDisplay();
+            } else {
+                return;
+            }
         }
         else if (key === "Enter") {
             calcResult();
