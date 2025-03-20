@@ -26,13 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     function isOperator(char) {
-        return ['+', '-', '*', '/', '.'].includes(char);
+        return ['+', '-', '*', '/', '.', '←'].includes(char);
     }
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
             const value = button.textContent;
 
-            if (value === "=") {
+            if (button.id === "backspace") {
+                equation = equation.slice(0, -1);
+                updateDisplay();
+            }
+            else if (value === "=") {
                 calcResult();
             } else if (value === "AC") {
                 calculation.textContent = '';
@@ -71,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
             calculation.textContent = '';
             equation = ''
             result.textContent = '';
-
             updateDisplay();
         }
     })

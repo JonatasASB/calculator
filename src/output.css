@@ -276,6 +276,9 @@
   .col-end-3 {
     grid-column-end: 3;
   }
+  .col-end-4 {
+    grid-column-end: 4;
+  }
   .col-end-5 {
     grid-column-end: 5;
   }
@@ -288,8 +291,20 @@
   .row-span-full {
     grid-row: 1 / -1;
   }
+  .row-start-1 {
+    grid-row-start: 1;
+  }
+  .row-start-2 {
+    grid-row-start: 2;
+  }
   .row-start-auto {
     grid-row-start: auto;
+  }
+  .row-end-2 {
+    grid-row-end: 2;
+  }
+  .row-end-3 {
+    grid-row-end: 3;
   }
   .row-end-auto {
     grid-row-end: auto;
