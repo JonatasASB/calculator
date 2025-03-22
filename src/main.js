@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     function isOperator(char) {
-        return ['+', '-', '*', '/', '.', '←'].includes(char);
+        return ['+', '*', '/', '.'].includes(char);
     }
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
