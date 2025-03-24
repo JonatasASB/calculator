@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             result.textContent = new Function(`return ${equation}`)() || 0
         } catch (error) {
-            result.textContent = 'Error'
+            result.textContent = 'Expressão Inválida'
         }
     }
     function addChar(char) {
